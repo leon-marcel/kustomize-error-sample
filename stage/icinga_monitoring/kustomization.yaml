@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../../default/
+
+namespace: icinga-monitoring
+
+patchesStrategicMerge:
+  - namespace.yaml
+
+resources:
+  - cluster_roles.yaml
+  - service_accounts.yaml
